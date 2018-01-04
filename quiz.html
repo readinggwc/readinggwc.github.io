@@ -1,0 +1,46 @@
+<script src=jquery.js></script>
+<script src=quiz.js></script>
+
+<script>
+  $(document).ready(function(){
+	  var score = 0;
+	  askQuestion("Are you ready?", ["Yes", "No"], function(c) {
+		  if (c == 0) {
+		      score += 10;
+		  }
+	      });
+	  askQuestion("Are you sure?", ["Maybe", "Maybe not"], function(c) {
+		  if(c == 0) {
+		      score += 10;
+		  }
+	      });
+	  afterAnswers(function() {
+		  if(score > 5) {
+		      askQuestion("Do you feel ready?", ["Yep", "Nope"],
+				  function(c) {
+				      if(c == 0) {
+					  score += 3;
+				      }
+				  });
+		  } else {
+		      askQuestion("Are you nervous?", ["What?", "Sure"],
+				  function(c) {
+				      score += c;
+				  });
+		  }
+		  askQuestion("Really?", ["No!", "Yes"], function(c) {
+			  if(c == 1) {
+			      score += 10;
+			  }
+		      });
+		  afterAnswers(function() {
+			  alert(score);
+		      });
+	      });
+	  
+  });
+</script>
+
+
+<div id=question style="display:none">
+</div>

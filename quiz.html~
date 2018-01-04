@@ -1,0 +1,12 @@
+<script src=jquery.js></script>
+
+<script>
+  $(document).ready(function(){
+  $("#question").fadeIn(3000);
+});
+</script>
+
+
+<div id=question style="display:none">
+This could be a question!
+</div>
