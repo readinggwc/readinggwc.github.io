@@ -5,61 +5,108 @@
    			 font-size:450%;
    			 color:#ffb900;
    			 text-align:center;
+			 font-family:courier;
    		 }
 		#subtitle-container{
-			font-size:55%;
+			font-size:50%;
 			color:white;
 			text-align:center;
+			font-family:arial;
 		}
 		#subtitle2-container{
-			font-size:80%;
+			font-size:110%;
 			color:white;
 			text-align:center;
+			font-family:courier;
 		}
 		#subtitle3-container{
-			font-size:80%;
+			font-size:110%;
 			color:white;
 			text-align:center;
+			font-family:courier;
 		}
 		#subtitle3b-container{
-			font-size:55%;
+			font-size:65%;
 			color:white;
 			text-align:left;
 		}
 		#subtitle3c-container{
 			font-size:55%;
-			color:white;
+			color:#ffb900;
 			text-align:left;
 		}
 		#subtitle3d-container{
 			font-size:55%;
-			color:white;
+			color:#ffb900;
 			text-align:left;
 		}
 		#subtitle3e-container{
 			font-size:55%;
-			color:white;
+			color:#ffb900;
 			text-align:left;
 		}
 		#subtitle3f-container{
 			font-size:55%;
-			color:white;
+			color:#ffb900;
 			text-align:left;
 		}
 		#subtitle3g-container{
 			font-size:55%;
-			color:white;
+			color:#ffb900;
 			text-align:left;
 		}
 		#subtitle4-container{
-			font-size:150%;
-			color:#ffb900;
+			font-size:65%;
+			color:white;
 			text-align:left;
 		}
 		#subtitle4b-container{
 			font-size:55%;
+			color:#2bff00;
+			text-align:left;
+		}
+		#subtitle4c-container{
+			font-size:55%;
+			color:#2bff00;
+			text-align:left;
+		}
+		#subtitle4d-container{
+			font-size:55%;
+			color:#2bff00;
+			text-align:left;
+		}
+		#subtitle4e-container{
+			font-size:55%;
+			color:#2bff00;
+			text-align:left;
+		}
+		#subtitle5-container{
+			font-size:125%;
 			color:#ffb900;
 			text-align:left;
+			font-family:courier;
+		}
+		#subtitle5b-container{
+			font-size:65%;
+			color:#ffb900;
+			text-align:left;
+		}
+		#subtitle6-container{
+			font-size:125%;
+			color:#ffb900;
+			text-align:left;
+			font-family:courier;
+		}
+		#subtitle6b-container{
+			font-size:65%
+			color:#ffb900;
+			text-align:left;
+		}
+		#subtitle7-container{
+			font-size:120%
+			color:white;
+			text-align:center;
+			font-family:courier;
 		}
 
 
@@ -76,16 +123,45 @@
    		 function mk_msg(msg){
    			 document.getElementById("msg-container").innerHTML = msg
    		 }
+
+		var question1_map = {}
+
+		var myquestion = []
+		myquestion.push("Question1")
+		myquestion.push("Question2")
+		myquestion.push("Question3")
+		myquestion.push("Question4")
+		function done(){
+			var response=""
+			for(var k = 0; k < myquestion.length; k++){
+				var radio_elts = document.getElementsByName(myquestion[k]);
+				for(var i = 0; i < radio_elts.length; i++){
+					var keyname=myquestion[k]+ radio_elts[i].value;
+					if(!(keyname in question1_map)){
+						question1_map[keyname] = 0;
+					}
+					if(radio_elts[i].checked){
+						response=response+myquestion[k]+": "+question1_map[keyname]+" people said the same answer as you!\n"
+						question1_map[keyname] = question1_map[keyname]+1;
+					}
+					
+				}
+			}
+			alert(response)
+		}
+
+
+
    	 </script>
     </head>
     <body>
 
    	 <div id="title-container">
-   		 <p>M&M HOTSPOT</p>
+   		 <p><u><b>M&M HOTSPOT</b></u></p>
 	<div id="subtitle-container">
-		<p> Welcome to our game center! Play games, explore phone backgrounds, riddles and quizzes or create your own!</p>
+		<p> Welcome to our game center! Play games, explore phone backgrounds, riddles and quizzes or take part in our polls!</p>
    	<div id="subtitle2-container">
-		<p>BACKGROUNDS:</p>
+		<p><b>BACKGROUNDS:</b></p>
 	
 	</div>
 
@@ -93,7 +169,7 @@
    		
 		<img src="https://lh4.googleusercontent.com/NiZGLoppp6j7IRKH9FfbUs-lhE7Pmir1GtuF6Ac_glmgRm51h1fv6oRD1yHWQUUFzFAPqyKQFtsSHhFgCko2zbjppHt8DGPAiv2BL6UDd_0DZn55iYmUp1NSuCTO3VBVyc-K8iEN"/>
 
-		 <img src="https://lh6.googleusercontent.com/as3_ifkobT4I2mTzJLT6FCSp-lsRo9ccxzMMQn7cdyMfysOl3Kl0Es0bFJVxz8g03qB_7845xnffpIWnTfYUHCWOyWbQ27Lc-KPQlAiZ"/>
+		 <img src="https://lh6.googleusercontent.com/yigq1VxgNXPwHaiv0BuF_6uJ1m7260PeLqUsQRG32ZIhi5e-maFaD1TnaiOTE__fpqhhTQd0GaqVVosNI1gtWvAqtIaDTMz3kXszxFEwB0DtOJgzFury9jwNewjsxxi_uFvIFoJ7"/>
 
  		<img src="https://lh5.googleusercontent.com/ifgX-YGasyXC4Y6QjPItIGzWzBWpS_qbAFM4swKbKRAEHbLgXZq0C-Ng3WUK0b6qqxZ0OF2b1SO8Pa4PR-F4Dia_0-8Ugrw0UJ2oZPGFU_Oiov2IjMNm4M0vFZOFf2N6I64szzf3"/>
 		  
@@ -101,61 +177,84 @@
 	 </div>
 
 
-
-	</script>
-    </head>
-    <body>
 	<div id="subtitle3-container">
-		<p>RIDDLES AND ANAGRAMS:</p>
+		<p><b>RIDDLES AND ANAGRAMS:</b></p>
 </div>
-	</script>
-    </head>
-    <body>
+
 	<div id="subtitle3b-container">
 		<p>Unscramble these words!</p>
 </div>
-	</script>
-    </head>
-    <body>
+	
 	<div id="subtitle3c-container">
 		<p>1) IFEHNCHDKERA</p>
 </div>
-	</script>
-    </head>
-    <body>
+	
 	<div id="subtitle3d-container">
 		<p>2) USIAARTLA</p>
 </div>
-	</script>
-    </head>
-    <body>
+	
 	<div id="subtitle3d-container">
 		<p>3) RICEOSHE<p/>
 </div>
-	</script>
-    </head>
-    <body>
+	
 	<div id="subtitle3f-container">
 		<p>4) EBHCA OHSUE</p>
 </div>
-	</script>
-    </head>
-    <body>
+	
 	<div id="subtitle3g-container">
 		<p>5) IENCSRPS</p>
 </div>
-	</script>
-    </head>
-    <body>
 	<div id="subtitle4-container">
-		<p>ANSWERS:</p>
+		<p>Solve these riddles!</p>
 </div>
-	</script>
-    </head>
-    <body>
 	<div id="subtitle4b-container">
+		<p>1) What begins with "e," ends with "e," and holds one letter?</p>
+</div>
+	<div id="subtitle4c-container">
+		<p>2) What gets wet the more it dries?</p>
+</div>
+	<div id="subtitle4d-container">
+		<p>3) What is the best season to jump on a trampoline?</p>
+</div>
+	<div id="subtitle4e-container">
+		<p>4) What is orange and sounds like a parrot?</p>
+</div>
+	<div id="subtitle5-container">
+		<p><b>ANAGRAM ANSWERS:</b></p>
+</div>
+	<div id="subtitle5b-container">
 		<p>HANDKERCHEIF, AUSTRALIA, CHEERIOS, BEACH HOUSE, PRINCESS</p>
 </div>
+	<div id="subtitle6-container">
+		<p><b>RIDDLE ANSWERS:</b></p>
+</div>
+	<div id="subtitle6b-container">
+		<p>An envelope, a towel, springtime, a carrot</p>
+</div>
+	<div id="subtitle7-container">
+		<p><b>POLLS:</b></p>
+</div>
+
    	 <div id="msg-container" style="text-align:center"></div>
+
+	<div>
+		<span>Do you like Animals?</span>
+		<label><input type="radio" name="Question1" value="yes"/>Yes</label>
+		<label><input type="radio" name="Question1" value="no"/>No</label>
+		<label><input type="radio" name="Question1" value="Kind of"/>Kind of</label>
+	</div>
+	<div>
+		<input type="radio" name="Question2" value="apple">Apple</input>
+		<input type="radio" name="Question2" value="banana">Banana</input>
+	</div>
+	<div>
+		<input type="radio" name="Question3" value="green">Green</input>
+		<input type="radio" name="Question3" value="purple">Purple</input>
+	</div>
+	<div>
+		<input type="radio" name="Question4" value="Blueberries">Blueberries</input>
+		<input type="radio" name="Question4" value="Watermelon">Watermelon</input>
+	</div>
+	<button id="submit-button" onclick="done()">Done!</button>
     </body>
 </html>
